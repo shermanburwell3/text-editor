@@ -17,7 +17,7 @@ module.exports = () => {
     plugins: [
       // Generates an HTML file from a template
       new HtmlWebpackPlugin({
-        template: './src/index.html',
+        template: './index.html',
         filename: 'index.html',
       }),
       // Generates a manifest.json file for PWA
