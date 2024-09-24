@@ -11,7 +11,7 @@ const loadSpinner = () => {
   spinner.classList.add('spinner');
   spinner.innerHTML = `
   <div class="loading-container">
-  <div class="loading-spinner" />
+    <div class="loading-spinner"></div>
   </div>
   `;
   main.appendChild(spinner);
@@ -19,15 +19,23 @@ const loadSpinner = () => {
 
 const editor = new Editor();
 
-if (typeof editor === 'undefined') {
+// Show spinner while the editor is loading
+if (!editor) {
   loadSpinner();
+} else {
+  // Initialize the editor or perform any setup needed
+  editor.init(); // Assuming you have an init method
 }
 
 // Check if service workers are supported
 if ('serviceWorker' in navigator) {
-  // register workbox service worker
-  const workboxSW = new Workbox('/src-sw.js');
-  workboxSW.register();
+  // Register Workbox service worker
+  const workboxSW = new Workbox('/sw.js');
+  workboxSW.register().then(() => {
+    console.log('Service Worker registered successfully.');
+  }).catch((error) => {
+    console.error('Service Worker registration failed:', error);
+  });
 } else {
   console.error('Service workers are not supported in this browser.');
 }
