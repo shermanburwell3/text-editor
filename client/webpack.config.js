@@ -37,6 +37,7 @@ module.exports = () => {
             destination: path.join('logo'),
           },
         ],
+        filename: 'manifest.json',
       }),
       // Injects the service worker into the build
       new InjectManifest({

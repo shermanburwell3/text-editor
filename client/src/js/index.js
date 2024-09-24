@@ -24,7 +24,7 @@ if (!editor) {
   loadSpinner();
 } else {
   // Initialize the editor or perform any setup needed
-  editor.init(); // Assuming you have an init method
+  editor.init();
 }
 
 // Check if service workers are supported

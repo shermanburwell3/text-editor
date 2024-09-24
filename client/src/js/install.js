@@ -3,9 +3,9 @@ const butInstall = document.getElementById('buttonInstall');
 // Logic for installing the PWA
 
 window.addEventListener('beforeinstallprompt', (event) => {
-    event.preventDefault();
     window.deferredPrompt = event;
     butInstall.style.display = 'block';
+    console.log("beforeinstallpropmpt fired.");
 });
 
 
@@ -24,6 +24,6 @@ butInstall.addEventListener('click', async () => {
 
 window.addEventListener('appinstalled', (event) => {
     console.log('App was installed.');
-    butInstall.style.display = 'none';
+    butInstall.style.display = 'hidden';
     window.deferredPrompt = null;
 });
