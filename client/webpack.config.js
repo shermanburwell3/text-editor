@@ -32,7 +32,7 @@ module.exports = () => {
         start_url: '.',
         icons: [
           {
-            src: path.resolve('src/images/logo.png'),
+            src: path.resolve('./src/images/logo.png'),
             sizes: [96, 128, 192, 256, 384, 512],
             destination: path.join('logo'),
           },
@@ -60,6 +60,18 @@ module.exports = () => {
               presets: ['@babel/preset-env', '@babel/preset-react'],
             },
           },
+        },
+        {
+          test: /\.(png|jpe?g|gif|svg)$/,
+          use: [
+            {
+              loader: 'file-loader',
+              options: {
+                name: '[path][name].[ext]',
+                outputPath: 'images/',
+              },
+            },
+          ],
         },
       ],
     },
