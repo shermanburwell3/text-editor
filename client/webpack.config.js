@@ -29,7 +29,8 @@ module.exports = () => {
         theme_color: '#317EFB',
         display: 'standalone',
         orientation: 'portrait',
-        start_url: '.',
+        start_url: '/',
+        publicPath: '/',
         icons: [
           {
             src: path.resolve('./src/images/logo.png'),
@@ -42,7 +43,7 @@ module.exports = () => {
       // Injects the service worker into the build
       new InjectManifest({
         swSrc: './src-sw.js', // Path to service worker
-        swDest: 'sw.js', // Output path for service worker
+        swDest: 'src-sw.js', // Output path for service worker
       }),
     ],
 
