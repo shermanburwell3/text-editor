@@ -22,6 +22,8 @@ module.exports = () => {
       }),
       // Generates a manifest.json file for PWA
       new WebpackPwaManifest({
+        fingerprints: false,
+        inject: true,
         name: 'Text Editor',
         short_name: 'Txt Edit',
         description: 'A web-based text editor',
