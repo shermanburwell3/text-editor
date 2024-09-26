@@ -4,6 +4,14 @@
 
 A text editor that saves text to the browser's indexedDb in order to persist information
 
+## Link to Deployed Application
+
+https://text-editor-usl5.onrender.com/
+
+## Screenshot
+
+![The deployed application](image.png)
+
 ## Credits
 
 Xpert Learning Assistant from Bootcamp Spot.
